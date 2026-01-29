@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller y Gomería El Litoral | Mecánica, Arenado y Protex</title>
+    <meta name="description" content="Servicios de mecánica general, gomería, arenado y aplicación de protex en Ushuaia. Soluciones integrales para tu vehículo.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Chakra Petch', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#ff6b00',
+                            dark: '#111827',
+                            gray: '#1f2937',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%);
+        }
+        .service-card:hover .icon-wrapper {
+            background-color: #ff6b00;
+            color: white;
+            transform: scale(1.1);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-100 font-sans antialiased">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-gray-800 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i data-lucide="wrench" class="h-8 w-8 text-brand-orange"></i>
+                    <span class="font-display font-bold text-2xl tracking-wider text-white">EL <span class="text-brand-orange">LITORAL</span></span>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#inicio" class="hover:text-brand-orange transition-colors px-3 py-2 rounded-md font-medium">Inicio</a>
+                        <a href="#servicios" class="hover:text-brand-orange transition-colors px-3 py-2 rounded-md font-medium">Servicios</a>
+                        <a href="#arenado-protex" class="hover:text-brand-orange transition-colors px-3 py-2 rounded-md font-medium">Arenado y Protex</a>
+                        <a href="#contacto" class="bg-brand-orange hover:bg-orange-700 text-white px-4 py-2 rounded-md font-bold transition-colors">Solicitar Turno</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden">
+                    <button onclick="toggleMenu()" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i data-lucide="menu" class="h-8 w-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" onclick="toggleMenu()" class="text-gray-300 hover:text-brand-orange block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#servicios" onclick="toggleMenu()" class="text-gray-300 hover:text-brand-orange block px-3 py-2 rounded-md text-base font-medium">Servicios</a>
+                <a href="#arenado-protex" onclick="toggleMenu()" class="text-gray-300 hover:text-brand-orange block px-3 py-2 rounded-md text-base font-medium">Arenado y Protex</a>
+                <a href="#contacto" onclick="toggleMenu()" class="text-brand-orange font-bold block px-3 py-2 rounded-md text-base">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80" alt="Taller Mecánico en Ushuaia" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <h1 class="text-4xl sm:text-6xl font-display font-bold text-white mb-6 text-shadow leading-tight">
+                Mecánica Integral <br> en el Fin del Mundo
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl text-shadow">
+                Especialistas en mecánica general, gomería y protección extrema para el clima de Ushuaia. 
+                24 de Marzo 227.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+                <a href="#servicios" class="bg-brand-orange hover:bg-orange-700 text-white font-bold py-4 px-8 rounded flex items-center justify-center gap-2 transition-all transform hover:scale-105">
+                    Ver Servicios <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </a>
+                <a href="https://wa.me/5492901557075" class="bg-transparent border-2 border-white hover:bg-white hover:text-brand-dark text-white font-bold py-4 px-8 rounded transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="phone" class="w-5 h-5"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios Principales -->
+    <section id="servicios" class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-orange font-bold tracking-widest uppercase mb-2">Expertos en Ushuaia</h2>
+                <h3 class="text-3xl md:text-4xl font-display font-bold text-white">Nuestros Servicios Más Pedidos</h3>
+                <div class="w-24 h-1 bg-brand-orange mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Mecánica -->
+                <div class="service-card bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-brand-orange transition-all duration-300 group">
+                    <div class="icon-wrapper w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mb-6 text-brand-orange transition-all duration-300">
+                        <i data-lucide="settings" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4 font-display">Mecánica General</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Cambio de aceite y filtros</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Frenos y embragues</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Tren delantero y suspensión</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Correas de distribución</li>
+                    </ul>
+                </div>
+
+                <!-- Gomería -->
+                <div class="service-card bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-brand-orange transition-all duration-300 group">
+                    <div class="icon-wrapper w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mb-6 text-brand-orange transition-all duration-300">
+                        <i data-lucide="circle-dashed" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4 font-display">Gomería</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Cambio de gomas estacional</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Balanceo computarizado</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Reparación de cubiertas</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Rotación de neumáticos</li>
+                    </ul>
+                </div>
+
+                <!-- Arenado -->
+                <div class="service-card bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-brand-orange transition-all duration-300 group">
+                    <div class="icon-wrapper w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mb-6 text-brand-orange transition-all duration-300">
+                        <i data-lucide="wind" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4 font-display">Arenado</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Restauración de chasis</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Arenado de llantas</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Limpieza de piezas de motor</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Eliminación de óxido severo</li>
+                    </ul>
+                </div>
+
+                <!-- Protex -->
+                <div class="service-card bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-brand-orange transition-all duration-300 group">
+                    <div class="icon-wrapper w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mb-6 text-brand-orange transition-all duration-300">
+                        <i data-lucide="shield-check" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4 font-display">Protex</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Protección anticorrosiva</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Recubrimiento de chasis</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Protección contra salitre</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i> Insonorización inferior</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Especial: Arenado y Protex -->
+    <section id="arenado-protex" class="py-20 bg-gray-900 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-orange/5 skew-x-12 transform origin-top-right"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative rounded-lg overflow-hidden shadow-2xl border-2 border-gray-700">
+                        <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Protección de chasis en Ushuaia" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-0 left-0 bg-brand-orange text-white px-4 py-2 font-bold font-display uppercase tracking-tighter">Protección para el Salitre</div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 space-y-6">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white">Prepará tu vehículo para el <span class="text-brand-orange">Invierno</span></h2>
+                    <p class="text-gray-300 text-lg">
+                        En Ushuaia, la nieve y la sal destruyen el chasis. Realizamos la limpieza profunda con arenado y sellado con Protex para garantizar que tu auto dure años sin corrosión.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-gray-800 text-white px-4 py-2 rounded-full border border-brand-orange text-sm font-bold">#1 en Arenado</span>
+                        <span class="bg-gray-800 text-white px-4 py-2 rounded-full border border-brand-orange text-sm font-bold">Anticorrosivo</span>
+                        <span class="bg-gray-800 text-white px-4 py-2 rounded-full border border-brand-orange text-sm font-bold">Larga Duración</span>
+                    </div>
+                    <a href="#contacto" class="inline-block mt-4 text-brand-orange font-bold hover:text-white transition-colors">Solicitar presupuesto de restauración &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner de Llamada a la Acción -->
+    <section class="bg-brand-orange py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-3xl font-display font-bold text-white mb-4">¿Necesitás cambiar las cubiertas o revisar el tren delantero?</h2>
+            <p class="text-white/90 mb-8 max-w-2xl mx-auto">Atendemos de lunes a sábados. No pierdas tiempo y asegurá tu turno hoy.</p>
+            <a href="tel:+542901557075" class="bg-gray-900 text-white hover:bg-white hover:text-gray-900 font-bold py-3 px-8 rounded-full transition-all inline-flex items-center gap-2">
+                <i data-lucide="phone-call" class="w-5 h-5"></i> Llamar al 2901 55-7075
+            </a>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-brand-dark border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-display font-bold text-white uppercase tracking-wider">Reservá tu Turno</h3>
+                <p class="text-gray-400 mt-2">Enviamos los detalles de tu turno por mail a nuestro equipo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <form onsubmit="handleSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Nombre</label>
+                                <input type="text" id="nombre" required class="w-full bg-gray-900 border border-gray-700 text-white rounded-md px-4 py-3 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors" placeholder="Tu nombre">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Teléfono</label>
+                                <input type="tel" id="telefono" required class="w-full bg-gray-900 border border-gray-700 text-white rounded-md px-4 py-3 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors" placeholder="2901...">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Servicio</label>
+                            <select id="servicio" class="w-full bg-gray-900 border border-gray-700 text-white rounded-md px-4 py-3 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors">
+                                <option>Cambio de Cubiertas (Estacional)</option>
+                                <option>Tren Delantero / Suspensión</option>
+                                <option>Service Completo (Aceite/Filtros)</option>
+                                <option>Arenado y Protex de Chasis</option>
+                                <option>Mecánica General</option>
+                                <option>Otro / Consulta</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Mensaje</label>
+                            <textarea id="mensaje" rows="4" class="w-full bg-gray-900 border border-gray-700 text-white rounded-md px-4 py-3 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors" placeholder="Contanos sobre tu vehículo..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-orange hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-md transition-colors flex items-center justify-center gap-2">
+                            Enviar Solicitud <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-gray-800 p-3 rounded text-brand-orange shrink-0"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="text-white font-bold">Dirección</h4>
+                                <p class="text-gray-400">24 de Marzo 227<br>Ushuaia, Tierra del Fuego</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-gray-800 p-3 rounded text-brand-orange shrink-0"><i data-lucide="clock" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="text-white font-bold">Horarios</h4>
+                                <p class="text-gray-400">Lun - Sáb: 9:00 - 20:00</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-gray-800 p-3 rounded text-brand-orange shrink-0"><i data-lucide="phone" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="text-white font-bold">WhatsApp</h4>
+                                <a href="https://wa.me/5492901557075" target="_blank" class="text-gray-400 hover:text-brand-orange transition-colors">2901 55-7075</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-gray-800 p-3 rounded text-brand-orange shrink-0"><i data-lucide="instagram" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="text-white font-bold">Instagram</h4>
+                                <a href="https://www.instagram.com/tallerellitoral" target="_blank" class="text-gray-400 hover:text-brand-orange transition-colors">@tallerellitoral</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 col-span-1 md:col-span-2">
+                            <div class="bg-gray-800 p-3 rounded text-brand-orange shrink-0"><i data-lucide="mail" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="text-white font-bold">Email de Turnos</h4>
+                                <a href="mailto:vinayagasvinayagas15@gmail.com" class="text-gray-400 hover:text-brand-orange transition-colors break-all">vinayagasvinayagas15@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-64 bg-gray-800 rounded-lg border border-gray-700 flex items-center justify-center overflow-hidden relative group">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1748&q=80" alt="Mapa de ubicación en Ushuaia" class="w-full h-full object-cover opacity-50">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <a href="https://www.google.com/maps/search/?api=1&query=24+de+Marzo+227+Ushuaia+Tierra+del+Fuego" target="_blank" class="bg-white text-brand-dark px-6 py-2 rounded-full font-bold shadow-lg hover:bg-brand-orange hover:text-white transition-colors flex items-center gap-2">
+                                <i data-lucide="map" class="w-4 h-4"></i> Cómo llegar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-white font-display font-bold text-xl uppercase tracking-tighter">EL <span class="text-brand-orange">LITORAL</span></div>
+            <p class="text-gray-500 text-sm">&copy; 2026 Taller y Gomería El Litoral. Ushuaia.</p>
+            <div class="flex gap-6">
+                <a href="https://wa.me/5492901557075" target="_blank" class="text-gray-400 hover:text-brand-orange transition-colors"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+                <a href="https://www.instagram.com/tallerellitoral" target="_blank" class="text-gray-400 hover:text-brand-orange transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating -->
+    <a href="https://wa.me/5492901557075" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all transform hover:scale-110 z-50 flex items-center justify-center group">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+        <span class="absolute right-full mr-3 bg-white text-gray-800 px-3 py-1 rounded text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md">¡Consultanos!</span>
+    </a>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const servicio = document.getElementById('servicio').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            const emailDestino = "vinayagasvinayagas15@gmail.com";
+            const asunto = `Solicitud de Turno: ${servicio} - ${nombre}`;
+            const cuerpo = `Hola, quisiera solicitar un turno.%0D%0A%0D%0A` +
+                           `Nombre: ${nombre}%0D%0A` +
+                           `Teléfono: ${telefono}%0D%0A` +
+                           `Servicio: ${servicio}%0D%0A` +
+                           `Mensaje: ${mensaje}`;
+                           
+            window.location.href = `mailto:${emailDestino}?subject=${encodeURIComponent(asunto)}&body=${cuerpo}`;
+
+            const btn = event.target.querySelector('button');
+            btn.innerHTML = 'Abriendo correo...';
+            btn.classList.replace('bg-brand-orange', 'bg-green-600');
+            
+            setTimeout(() => {
+                event.target.reset();
+                btn.innerHTML = 'Enviar Solicitud <i data-lucide="send" class="w-4 h-4"></i>';
+                btn.classList.replace('bg-green-600', 'bg-brand-orange');
+                lucide.createIcons();
+            }, 3000);
+        }
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.replace('bg-brand-dark/95', 'bg-brand-dark');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.replace('bg-brand-dark', 'bg-brand-dark/95');
+            }
+        });
+    </script>
+</body>
+</html>
